@@ -1,49 +1,51 @@
-import { FETCH_CARDS_SUCCESS,
-         FETCH_CARDS_ERROR } from '../constants/constants';
+import CONST from '../constants/constants';
 import KanbanAPI from '../api/KanbanAPI';
 
 let ActionCreators = {
+
     fetchCards() {
         return (dispatch) => {
-            dispatch({ type:FETCH_CARDS_SUCCESS });
+            dispatch({ type:CONST.FETCH_CARDS_SUCCESS });
             KanbanAPI.fetchCards().then(
-            (cards) => dispatch({type:FETCH_CARDS_SUCCESS, success:true,cards}),
-            (error) => dispatch({type:FETCH_CARDS_ERROR, success:false})
+            (cards) => dispatch({type:CONST.FETCH_CARDS_SUCCESS, success:true, cards}),
+            (error) => dispatch({type:CONST.FETCH_CARDS_ERROR, success:false, error})
         )
         }
-    }
+    },
 
-    addCard(card) {
-
-
-        ret
-
-        let prevState = this.state;
-
-        if (card.id === null) {
-            let card = Object.assign({}, card, {id:Date.now()});
+    addCard() {
+        return (dispatch) => {
+            dispatch({ type:CONST.CREATE_CARD_SUCCESS });
+            KanbanAPI.addCard().then(
+            (cards) => dispatch({type:CONST.CREATE_CARD_SUCCESS, success:true,cards}),
+            (error) => dispatch({type:CONST.CREATE_CARD_ERROR, success:false})
+        )
         }
+    },
 
-        let nextState = update(this.state.cards, { $push: [card] });
+    updateCard(card, draftCard) {
+        return (dispatch) => {
+            dispatch({ type:CONST.UPDATE_CARD_SUCCESS });
+            KanbanAPI.updateCard().then(
+                (card)
+                )
+        }
+    },
 
-        this.setState({cards:nextState});
+    updateCardStatus(cardId, listId) {
+        return (dispatch) => this._updateCardStatus(dispatch, cardId, listId);
+    },
 
-        fetch(`${API_URL}/cards`, {
-            method: 'post' ,
-            headers: API_HEADERS ,
-            body: JSON.stringify(card)
-        }).then((response) => {
-            if (response.ok) {
-                return response.json()
-            } else {
-                throw new Error("Server response wasn't OK");
-            }
-        }).then((responseData) => {
-            card.id = responseData.id
-            this.setState({cards:nextState})
-        }).catch((error) => {
-            this.setState(prevState);
-        });
+    updateCardPosition(draggedId, id) {
+
+    },
+
+    persistCardDrag(props) {
+
+    },
+
+    toggleCardDetails(id) {
+
     }
 
 }

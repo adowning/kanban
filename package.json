@@ -4,7 +4,8 @@
   "description": "",
   "main": "App.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node_modules/.bin/webpack-dev-server --progress"
   },
   "author": "",
   "license": "ISC",
@@ -31,9 +32,10 @@
     "react-dnd": "^2.1.4",
     "react-dnd-html5-backend": "^2.1.2",
     "react-dom": "^15.2.1",
-    "react-input-color": "^1.7.2",
+    "react-redux": "^4.4.5",
     "react-router": "^2.6.1",
     "redux": "^3.5.2",
+    "redux-thunk": "^2.1.0",
     "symbol-observable": "^1.0.1",
     "whatwg-fetch": "^1.0.0"
   }

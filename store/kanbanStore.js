@@ -1,6 +1,6 @@
 import { createStore, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
-import reducers from '../reducers/rootReducer';
+import reducers from '../reducer/rootReducer';
 
 
 const logger = (store) => (next) => (action) => {

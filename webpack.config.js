@@ -5,12 +5,21 @@ module.exports = {
         path:'',
         filename:'bundle.js'
     },
-    devServer:'',
+
+    devServer: {
+        port: 3333,
+        contentBase: '',
+        colors: true,
+        historyApiFallback: true,
+        inline: true
+    },
+
     module: {
         loaders: [
             {
                 test:/\.js$/,
-                loaders: 'babel-loader'
+                exclude: /node_modules/,
+                loader: 'babel-loader'
             }
         ]
     }

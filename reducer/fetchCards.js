@@ -1,12 +1,13 @@
-import { FETCH_CARDS_SUCCESS } from '../constants/constants'
+import CONST from '../constants/constants'
+import update from 'react-addons-update';
 
 const fetchCards =(state = { cards: [] }, action) => {
     switch(action.type) {
-        case: FETCH_CARDS_SUCCESS:
-        return action.payload.response
+        case CONST.FETCH_CARDS_SUCCESS :
+        return update(state, {cards:{ $set: action.cards }})
         default:
         return state;
     }
 }
 
-export fetchCards;
+export default fetchCards;

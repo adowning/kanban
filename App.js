@@ -1,33 +1,23 @@
-import { React, Component, PropTypes } from 'react'
-import { render } from 'react-dom'
-import { Provider, connect } from 'react-redux';
+import React, { Component, PropTypes } from 'react'
+import { render } from 'react-dom';
+import { Provider } from 'react-redux';
+import { Router, Route } from 'react-redux';
+import createBrowserHistory from 'history/lib/createBrowserHistory';
+import kanbanStore from './store/kanbanStore';
+import KanbanBoard from './components/KanbanBoard';
+import EditCard from './components/EditCard';
+import NewCard  from './components/NewCard';
 
-import ActionCreators from '../actions/ActionCreators';
-import kanbanStore from '../store/kanbanStore';
+render((
+    <Provider store={kanbanStore} >
+        <Router history={createBrowserHistory()} >
+            <Route path="/" component={kanbanBoard} >
+                <Route path="new" component={newCard} />
+                <Route path="edit/:card_id" component={EditCard} />
+            </Route>
+        </Router>
+    </Provider>
+    ), document.getElementById('root'))
 
-class App extends Component {
-    componentDidMount() {
-        this.props.fetchCards();
-    }
 
-}
-
-App.propTypes = {
-    fetchCards: PropTypes.func.isRequired
-}
-
-const mapStateToProps = (state) => ({
-
-});
-
-const mapDispatchToProps = (dispatch) => ({
-    fetchCards: () => dispatch(ActionCreators.fetchCards())
-});
-
-const AppContainer = connect(mapStateToProps, mapDispatchToProps)(App);
-
-render(
-    <Provider store={kanbanStore}>
-        <AppContainer />
-    </Provider>,
-    document.getElementById('root'));
+//최상위 컴포넌트들과 라우터만 랜더해주고 있음.
