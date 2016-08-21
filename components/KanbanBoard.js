@@ -1,37 +1,41 @@
 import React, { Component, PropTypes } from 'react';
+import { connect } from 'react-redux';
 import { DragDropContext } from 'react-dnd';
-import HTML5Backend        from 'react-dnd-html5-backend';
-import { connect }         from 'react-redux';
-
-import { Link }    from 'react-router'
-import List        from './List';
+import HTML5Backend from 'react-dnd-html5-backend';
+import { Link } from 'react-router'
+import CardList from './CardList';
 import ActionCreators from '../actions/ActionCreators'
 
 class KanbanBoard extends Component {
     componentDidMount() {
         //init cards
-        this.props.fetchCards();
+        this.props.fetchCards()
     }
 
     render() {
+       const {
+            children,
+            cards = []
+        } = this.props
         return (
                 <div className="app" >
-                     <Link to="/new" className="float-button">+</Link>
+                     <Link to='/new'className="float-button">+</Link>
 
-                     <List id="todo"
+                     <CardList id="todo"
                            title="To Do"
-                           cards={this.props.cards.filter(
-                                  (card) => card.status === "todo")} />
+                           cards={cards.filter(
+                            (card) => card.status === "todo")} />
 
-                     <List id="in-progress"
+                     <CardList id="in-progress"
                            title="In Progress"
-                           cards={this.props.cards.filter(
+                           cards={cards.filter(
                             (card) => card.status === "in-progress")} />
 
-                     <List id="done"
+                     <CardList id="done"
                            title="Done"
-                           cards={this.props.cards.filter(
+                           cards={cards.filter(
                             (card) => card.status === "done")} />
+                           {children}
                 </div>
             )
     }
@@ -39,12 +43,14 @@ class KanbanBoard extends Component {
 
 KanbanBoard.propTypes = {
     fetchCards: PropTypes.func.isRequired,
+    cards: PropTypes.arrayOf(PropTypes.object)
 }
 
 const KanbanWithDragDrop = DragDropContext(HTML5Backend)(KanbanBoard)
 
 const mapStateToProps = (state) => ({
-    cards: state.cards
+   cards: state.cards
+    //cards: Immutable.List(state.cards)
 });
 
 const mapDispatchToProps = (dispatch) => ({

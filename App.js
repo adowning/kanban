@@ -1,23 +1,24 @@
-import React, { Component, PropTypes } from 'react'
+import 'babel-polyfill'
+import React from 'react'
 import { render } from 'react-dom';
+import { Router, Route, browserHistory, IndexRoute } from 'react-router';
 import { Provider } from 'react-redux';
-import { Router, Route } from 'react-redux';
-import createBrowserHistory from 'history/lib/createBrowserHistory';
 import kanbanStore from './store/kanbanStore';
 import KanbanBoard from './components/KanbanBoard';
-import EditCard from './components/EditCard';
-import NewCard  from './components/NewCard';
+import EditCard from './components/new_edit/EditCard';
+import NewCard  from './components/new_edit/NewCard';
+
 
 render((
-    <Provider store={kanbanStore} >
-        <Router history={createBrowserHistory()} >
-            <Route path="/" component={kanbanBoard} >
-                <Route path="new" component={newCard} />
-                <Route path="edit/:card_id" component={EditCard} />
-            </Route>
-        </Router>
-    </Provider>
-    ), document.getElementById('root'))
+  <Provider store={kanbanStore}>
+    <Router history={browserHistory}>
+      <Route path="/" component={KanbanBoard}>
+        <Route path="new" component={NewCard} />
+        <Route path="edit/:card_id" component={EditCard} />
+      </Route>
+    </Router>
+  </Provider>
+), document.getElementById('root'));
 
+//최상위 컴포넌트와 라우터를 랜더한다.
 
-//최상위 컴포넌트들과 라우터만 랜더해주고 있음.

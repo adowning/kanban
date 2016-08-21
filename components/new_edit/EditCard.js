@@ -1,11 +1,12 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
-import { getCard } from '../reducers';
+import { getCard } from '../../reducer/rootReducer'; //흠?
+import { browserHistory } from 'react-router'
 import CardForm from './CardForm';
-import ActionCreators from '../actions/ActionCreators';
+import ActionCreators from '../../actions/ActionCreators';
 import 'babel-polyfill';
 
-export default class EditCard extends Component {
+class EditCard extends Component {
     componentDidMount() {
         this.props.createDraft(this.props.card);
     }
@@ -18,11 +19,11 @@ export default class EditCard extends Component {
         e.preventDefault();
         this.props.updateCard(this.props.card, this.props.draft);
 
-        this.props.history.pushState(null,'/');
+        browserHistory.push('/');
     }
 
     handleClose(e) {
-        this.props.history.pushState(null, '/')
+        browserHistory.push('/');
     }
 
     render() {
@@ -44,9 +45,14 @@ EditCard.propTypes = {
     updateCard: PropTypes.func.isRequired
 }
 
+EditCard.contextTypes = {
+      router: React.PropTypes.object.isRequired
+}
+
+
 const mapStateToProps = (state, ownProps) => ({
     draft: state.cardDraft,
-    card: getCard(state, ownProps.parmas.card_id)
+    card: getCard(state, ownProps.params.card_id)
 })
 
 const mapDispatchToProps = (dispatch) => ({
@@ -56,3 +62,4 @@ const mapDispatchToProps = (dispatch) => ({
 })
 
 export default connect(mapStateToProps,mapDispatchToProps)(EditCard);
+
