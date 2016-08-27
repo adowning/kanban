@@ -15,17 +15,19 @@ export default class CardForm extends Component {
         return(
             <div>
               <div className="card big">
-                <form onSubmit={this.props.handleSubmit.bind(this)} >
+                <form onSubmit={this.props.handleSubmit.bind(this)}>
                     <input type='text'
                     value={this.props.draftCard.title}
                     onChange={this.handleChange.bind(this, 'title')}
                     placeholder="Title"
                     required={true}
-                    autoFocus={true} />
+                    autoFocus={true}
+                    />
                     <textarea value={this.props.draftCard.description}
                     onChange={this.handleChange.bind(this, 'description')}
                     placeholder="Description"
-                    required={true} />
+                    required={true}
+                    />
                     <label htmlFor="status">Status</label>
                     <select id="status"
                     value={this.props.draftCard.status}
@@ -39,15 +41,14 @@ export default class CardForm extends Component {
                     <input id="color"
                     onChange={this.handleChange.bind(this, 'color')}
                     type="color"
-                    defaultValue={this.props.draftCard.color} />
-
+                    defaultValue={this.props.draftCard.color}
+                    />
                     <div className='actions'>
                         <button type="submit">{this.props.buttonLabel}</button>
                     </div>
                 </form>
               </div>
-              <div className="overlay" onClick={this.handleClose.bind(this)} >
-              </div>
+              <div className="overlay" onClick={this.handleClose.bind(this)} ></div>
             </div>
             )
     }

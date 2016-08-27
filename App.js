@@ -2,7 +2,8 @@ import 'babel-polyfill'
 import React from 'react'
 import { render } from 'react-dom';
 import { Router, Route, browserHistory, IndexRoute } from 'react-router';
-import { Provider } from 'react-redux';
+import { Provider } from 'react-redux'
+
 import kanbanStore from './store/kanbanStore';
 import KanbanBoard from './components/KanbanBoard';
 import EditCard from './components/new_edit/EditCard';
