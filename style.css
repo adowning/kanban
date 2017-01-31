@@ -81,8 +81,10 @@ ul {
 
 .card.big {
   position: absolute;
-  width: 450px;
-  height: 200px;
+  width:calc(100% - 120px);
+  height:calc(100% - 120px);
+  margin-top:40px;
+  margin-left:40px;
   margin: auto;
   padding: 15px;
   top: 0; left: 0; bottom: 100px; right: 0;
@@ -210,3 +212,77 @@ ul {
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
 }
 
+.CardPage {
+  position:relative;
+  padding:10px;
+  background-color:white;
+  border-radius:10px;
+  width:calc(100% - 120px);
+  height:calc(100% - 120px);
+  box-shadow: 2px 2px 10px 1px #214A6E;
+}
+
+.CardPage > .contentArea {
+  padding-right:240px;
+  height: calc(100% - 160px);
+}
+
+.CardPage > .contentArea .checkLists {
+  display:flex;
+}
+
+.CardPage > .rightSidebar {
+  position:absolute;
+  width:200px;
+  padding:20px;
+  height:calc(100% - 60px);
+  border-left:1px solid lightgray;
+  right:10px;
+  top:10px;
+}
+
+.CardPage .rightSidebar h3 {
+  font-size:14px;
+  padding:0px;
+  xmargin:0px 0px 10px 0px;
+  text-transform: uppercase;
+  color:#d2d2d2;
+  font-weight:bold;
+}
+
+.CardPage .actionSelect {
+  height:30px;
+  background-color:whitesmoke;
+  border:1px solid lightgray;
+  font-size:14px;
+  color: #4e4e4e;
+  padding:8px;
+  border-radius:5px;
+  outline:none;
+  width:100%;
+}
+
+
+.CardPage .actionButton {
+  text-align:left;
+  background-color:whitesmoke;
+  margin-bottom:5px;
+  border:1px solid lightgray;
+  font-size:14px;
+  color: #4e4e4e;
+  padding:8px;
+  border-radius:5px;
+  outline:none;
+  width:100%;
+}
+
+.CardPage .actionButton:hover {
+  background-color:lightgray;
+  color:black;
+  cursor:pointer;
+}
+
+.CardPage .actionButton:active {
+  background-color:#87B4DD;
+  color: white;
+}
