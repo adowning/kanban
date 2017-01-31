@@ -1,10 +1,12 @@
 import { combineReducers } from 'redux';
 import cards, * as fromCards from './cards';
+import lines, * as fromLines from './lines';
 import cardDraft from './cardDraft';
 
 
 const rootReducer = combineReducers({
   cards,
+  lines,
   cardDraft
 });
 

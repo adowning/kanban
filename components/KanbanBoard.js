@@ -10,9 +10,11 @@ class KanbanBoard extends Component {
     componentDidMount() {
         //init cards
         this.props.fetchCards()
+        // this.props.fetchLineItems()
     }
-
     render() {
+//    console.log(cards+orderguid)
+        
        const {
             children,
             cards = []
@@ -43,18 +45,22 @@ class KanbanBoard extends Component {
 
 KanbanBoard.propTypes = {
     fetchCards: PropTypes.func.isRequired,
-    cards: PropTypes.arrayOf(PropTypes.object)
+    // fetchLineItems: PropTypes.func.isRequired,
+    cards: PropTypes.arrayOf(PropTypes.object),
+    orderguid: PropTypes.arrayOf(PropTypes.object),
 }
 
 const KanbanWithDragDrop = DragDropContext(HTML5Backend)(KanbanBoard)
 
 const mapStateToProps = (state) => ({
-   cards: state.cards
+   cards: state.cards,
+   orderguid: state.orderguid
     //cards: Immutable.List(state.cards)
 });
 
 const mapDispatchToProps = (dispatch) => ({
     fetchCards: () => dispatch(ActionCreators.fetchCards())
+    // fetchLineItems: () => dispatch(ActionCreators.fetchLineItems())
 });
 
 export default connect(mapStateToProps,mapDispatchToProps)(KanbanWithDragDrop)

@@ -1,4 +1,5 @@
 export const CARD = 'card';
+export const LINE = 'line';
 
 export const REQUEST_CARDS = 'request cards';
 export const RECEIVE_CARDS = 'receive cards';
@@ -29,3 +30,10 @@ export const RECEIVE_DELETE_TASK = 'receive delete task';
 
 export const REQUEST_TOGGLE_TASK = 'request toggle task';
 export const RECEIVE_TOGGLE_TASK = 'receive toggle task';
+//SERVICE MONSTER STUFF
+export const REQUEST_ORDERGUID = 'request orderguid';
+export const RECEIVE_ORDERGUID  = 'receive orderguid';
+export const RECEIVE_LINEITEMS  = 'receive lineitems';
+export const REQUEST_LINEITEMS  = 'request lineitems';
+export const REQUEST_CREATE_MULTIPLECARDS  = 'request create multiple cards';
+export const RECEIVE_CREATE_MULTIPLECARDS  = 'receive create multiple cards';

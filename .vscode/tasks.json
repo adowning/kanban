@@ -1,0 +1,169 @@
+Skip to content
+This repository
+Search
+Pull requests
+Issues
+Gist
+ @adowning
+ Watch 6
+  Star 66
+  Fork 459 skolmer/react-hot-boilerplate-vscode
+forked from gaearon/react-transform-boilerplate
+ Code  Issues 0  Pull requests 0  Projects 0  Wiki  Pulse  Graphs
+Branch: master Find file Copy pathreact-hot-boilerplate-vscode/.vscode/tasks.json
+3cf592f  on May 13, 2016
+@skolmer skolmer Removed space char
+1 contributor
+RawBlameHistory     
+150 lines (149 sloc)  3.2 KB
+// Available variables which can be used inside of strings.
+// ${workspaceRoot}: the root folder of the team
+// ${file}: the current opened file
+// ${fileBasename}: the current opened file's basename
+// ${fileDirname}: the current opened file's dirname
+// ${fileExtname}: the current opened file's extension
+// ${cwd}: the current working directory of the spawned process
+{
+	"version": "0.1.0",
+	"command": "npm",
+	"isShellCommand": true,
+	"echoCommand": false,
+	"suppressTaskName": true,
+	"showOutput": "always",
+	"tasks": [
+		{
+			"args": [
+				"run",
+				"start",
+				"--silent",
+				"--react-hot-boilerplate-vscode:port=3000",
+				"--react-hot-boilerplate-vscode:host=localhost" // use these command line args to override host and port of the dev-server. default values are defined in package.json config section.
+			],
+			"problemMatcher": [
+				{
+					"owner": "custom",
+					"pattern": [],
+					"watching": {
+						"activeOnStart": true,
+						"beginsPattern": "webpack: bundle is now INVALID",
+						"endsPattern": "webpack: bundle is now VALID"
+					}
+				},
+				{
+					"owner": "javascript",
+					"severity": "error",
+					"applyTo": "closedDocuments",
+					"fileLocation": "absolute",
+					"pattern": [
+						{
+							"regexp": "^(Module build failed:\\s.*?:\\s(.*):(.*?))[\\s+](?:\\(([\\d-]+):([\\d-]+)\\))?$",
+							"message": 3,
+							"file": 2,
+							"line": 4,
+							"column": 5
+						}
+					]
+				},
+				{
+					"owner": "javascript",
+					"severity": "error",
+					"applyTo": "closedDocuments",
+					"fileLocation": "relative",
+					"pattern": [
+						{
+							"regexp": "^ERROR in ./(.*)\\s?$",
+							"file": 1
+						},
+						{
+							"regexp": "^.*?Error:\\s(.*').*$",
+							"message": 1
+						},
+						{
+							"regexp": "^\\s+@.*?(\\d+)(?:-([\\d]+))?:(\\d+)(?:-([\\d]+))?\\s?$",
+							"line": 1,
+							"endLine": 2,
+							"column": 3,
+							"endColumn": 4
+						}
+					]
+				}
+			],
+			"isWatching": true,
+			"taskName": "development"
+		},
+		{
+			"args": [
+				"run",
+				"build",
+				"--silent"
+			],
+			"problemMatcher": [
+				{
+					"owner": "javascript",
+					"severity": "error",
+					"applyTo": "closedDocuments",
+					"fileLocation": "absolute",
+					"pattern": [
+						{
+							"regexp": "^(Module build failed:\\s.*?:\\s(.*):(.*?))[\\s+](?:\\(([\\d-]+):([\\d-]+)\\))?$",
+							"message": 3,
+							"file": 2,
+							"line": 4,
+							"column": 5
+						}
+					]
+				},
+				{
+					"owner": "javascript",
+					"severity": "error",
+					"applyTo": "closedDocuments",
+					"fileLocation": "relative",
+					"pattern": [
+						{
+							"regexp": "^ERROR in ./(.*)\\s?$",
+							"file": 1
+						},
+						{
+							"regexp": "^.*?Error:\\s(.*').*$",
+							"message": 1
+						},
+						{
+							"regexp": "^\\s+@.*?(\\d+)(?:-([\\d]+))?:(\\d+)(?:-([\\d]+))?\\s?$",
+							"line": 1,
+							"endLine": 2,
+							"column": 3,
+							"endColumn": 4
+						}
+					]
+				}
+			],
+			"taskName": "release",
+			"isBuildCommand": true
+		},
+		{
+			"args": [
+				"install",
+				"--progress",
+				"false",
+				"--loglevel",
+				"http"
+			],
+			"taskName": "install"
+		},
+		{
+			"args": [
+				"run",
+				"lint",
+				"--loglevel",
+				"silent"
+			],
+			"problemMatcher": [
+				"$eslint-stylish"
+			],
+			"taskName": "lint",
+			"isTestCommand": true
+		}
+	]
+}
+Contact GitHub API Training Shop Blog About
+© 2017 GitHub, Inc. Terms Privacy Security Status Help

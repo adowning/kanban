@@ -13,19 +13,33 @@ import {
   REQUEST_DELETE_TASK,
   RECEIVE_DELETE_TASK,
   REQUEST_TOGGLE_TASK,
-  RECEIVE_TOGGLE_TASK
+  RECEIVE_TOGGLE_TASK,
+  //SERVICEMONSTER
+  RECEIVE_ORDERGUID,
+  RECEIVE_LINEITEMS,
+  REQUEST_LINEITEMS
+
 } from '../constants';
 import update from 'react-addons-update';
 import 'babel-polyfill';
 
 let cardIndex;
 let taskIndex;
+let orderGUID;
 
 const cards = (state =[], action) => {
   switch (action.type) {
-    case RECEIVE_CARDS:
-      return action.cards;
 
+     case RECEIVE_ORDERGUID:
+      return update(state, {
+        orderGUID: {
+          $set: action.body
+        }
+      });
+
+     case RECEIVE_CARDS:
+      return action.cards;
+    
     /*
      * Card Creation
      */
@@ -201,4 +215,5 @@ export default cards;
 
 export const getCard = (state, id) => state.find((card)=>card.id == id);
 export const getCardIndex = (state, id) => state.findIndex((card)=>card.id == id);
+export const getGUID = (state) => state.orderGUID == orderGUID;
 

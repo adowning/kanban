@@ -1,0 +1,78 @@
+2017/01/28-20:53:39.794 6208 Reusing MANIFEST c:\projects\kanbanRedux\.vscode\chrome\Default\Session Storage/MANIFEST-000001
+2017/01/28-20:53:39.794 6208 Recovering log #73
+2017/01/28-20:53:39.794 6208 Reusing old log c:\projects\kanbanRedux\.vscode\chrome\Default\Session Storage/000073.log 
+2017/01/28-20:55:56.171 5528 Level-0 table #77: started
+2017/01/28-20:55:56.177 5528 Level-0 table #77: 72759 bytes OK
+2017/01/28-20:55:56.182 5528 Delete type=0 #73
+2017/01/28-20:55:56.182 5528 Expanding@0 2+1 (339912+1284893 bytes) to 4+1 (511740+1284893 bytes)
+2017/01/28-20:55:56.183 5528 Compacting 4@0 + 1@1 files
+2017/01/28-20:55:56.217 5528 Generated table #78@0: 911 keys, 1616456 bytes
+2017/01/28-20:55:56.217 5528 Compacted 4@0 + 1@1 files => 1616456 bytes
+2017/01/28-20:55:56.222 5528 compacted to: files[ 0 1 1 0 0 0 0 ]
+2017/01/28-20:55:56.222 5528 Delete type=2 #67
+2017/01/28-20:55:56.223 5528 Delete type=2 #69
+2017/01/28-20:55:56.223 5528 Delete type=2 #71
+2017/01/28-20:55:56.224 5528 Delete type=2 #74
+2017/01/28-20:55:56.225 5528 Delete type=2 #77
+2017/01/28-20:57:55.136 5528 Level-0 table #80: started
+2017/01/28-20:57:55.141 5528 Level-0 table #80: 71608 bytes OK
+2017/01/28-20:57:55.146 5528 Delete type=0 #76
+2017/01/28-21:00:12.238 5528 Level-0 table #82: started
+2017/01/28-21:00:12.244 5528 Level-0 table #82: 71502 bytes OK
+2017/01/28-21:00:12.247 5528 Delete type=0 #79
+2017/01/28-21:02:51.402 5528 Level-0 table #84: started
+2017/01/28-21:02:51.411 5528 Level-0 table #84: 69435 bytes OK
+2017/01/28-21:02:51.416 5528 Delete type=0 #81
+2017/01/28-21:02:56.455 5528 Level-0 table #86: started
+2017/01/28-21:02:56.461 5528 Level-0 table #86: 69823 bytes OK
+2017/01/28-21:02:56.464 5528 Delete type=0 #83
+2017/01/28-21:02:56.464 5528 Compacting 4@0 + 1@1 files
+2017/01/28-21:02:56.501 5528 Generated table #87@0: 1082 keys, 1896737 bytes
+2017/01/28-21:02:56.501 5528 Compacted 4@0 + 1@1 files => 1896737 bytes
+2017/01/28-21:02:56.506 5528 compacted to: files[ 0 1 1 0 0 0 0 ]
+2017/01/28-21:02:56.506 5528 Delete type=2 #78
+2017/01/28-21:02:56.507 5528 Delete type=2 #80
+2017/01/28-21:02:56.507 5528 Delete type=2 #82
+2017/01/28-21:02:56.507 5528 Delete type=2 #84
+2017/01/28-21:02:56.508 5528 Delete type=2 #86
+2017/01/28-21:04:20.539 5528 Level-0 table #89: started
+2017/01/28-21:04:20.545 5528 Level-0 table #89: 113386 bytes OK
+2017/01/28-21:04:20.549 5528 Delete type=0 #85
+2017/01/28-21:04:30.502 5528 Level-0 table #91: started
+2017/01/28-21:04:30.508 5528 Level-0 table #91: 70505 bytes OK
+2017/01/28-21:04:30.512 5528 Delete type=0 #88
+2017/01/28-21:07:33.763 5528 Level-0 table #93: started
+2017/01/28-21:07:33.770 5528 Level-0 table #93: 34602 bytes OK
+2017/01/28-21:07:33.775 5528 Delete type=0 #90
+2017/01/28-21:08:02.683 5528 Level-0 table #95: started
+2017/01/28-21:08:02.688 5528 Level-0 table #95: 69809 bytes OK
+2017/01/28-21:08:02.691 5528 Delete type=0 #92
+2017/01/28-21:08:02.692 5528 Compacting 4@0 + 1@1 files
+2017/01/28-21:08:02.733 5528 Generated table #96@0: 1143 keys, 2106315 bytes
+2017/01/28-21:08:02.739 5528 Generated table #97@0: 75 keys, 11877 bytes
+2017/01/28-21:08:02.739 5528 Compacted 4@0 + 1@1 files => 2118192 bytes
+2017/01/28-21:08:02.742 5528 compacted to: files[ 0 2 1 0 0 0 0 ]
+2017/01/28-21:08:02.742 5528 Delete type=2 #87
+2017/01/28-21:08:02.743 5528 Delete type=2 #89
+2017/01/28-21:08:02.743 5528 Delete type=2 #91
+2017/01/28-21:08:02.744 5528 Delete type=2 #93
+2017/01/28-21:08:02.744 5528 Delete type=2 #95
+2017/01/28-21:08:08.068 5528 Level-0 table #99: started
+2017/01/28-21:08:08.075 5528 Level-0 table #99: 109606 bytes OK
+2017/01/28-21:08:08.078 5528 Delete type=0 #94
+2017/01/28-21:09:02.413 5528 Level-0 table #101: started
+2017/01/28-21:09:02.420 5528 Level-0 table #101: 110317 bytes OK
+2017/01/28-21:09:02.423 5528 Delete type=0 #98
+2017/01/28-21:10:03.035 5528 Level-0 table #103: started
+2017/01/28-21:10:03.040 5528 Level-0 table #103: 98493 bytes OK
+2017/01/28-21:10:03.045 5528 Delete type=0 #100
+2017/01/28-21:14:17.061 5528 Level-0 table #105: started
+2017/01/28-21:14:17.068 5528 Level-0 table #105: 103950 bytes OK
+2017/01/28-21:14:17.071 5528 Delete type=0 #102
+2017/01/28-21:14:17.072 5528 Compacting 1@0 + 1@1 files
+2017/01/28-21:14:17.114 5528 Generated table #106@0: 1148 keys, 2111966 bytes
+2017/01/28-21:14:17.123 5528 Generated table #107@0: 53 keys, 102682 bytes
+2017/01/28-21:14:17.123 5528 Compacted 1@0 + 1@1 files => 2214648 bytes
+2017/01/28-21:14:17.126 5528 compacted to: files[ 3 3 1 0 0 0 0 ]
+2017/01/28-21:14:17.126 5528 Delete type=2 #96
+2017/01/28-21:14:17.127 5528 Delete type=2 #99

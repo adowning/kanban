@@ -1,0 +1,61 @@
+{
+    // Use IntelliSense to learn about possible Node.js debug attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Launch Program",
+            "program": "${workspaceRoot}\\App.js",
+            "cwd": "${workspaceRoot}"
+        },
+        {
+            "type": "node",
+            "request": "attach",
+            "name": "Attach to Process",
+            "port": 5858
+        },
+        {
+            "name": "Debug",
+            "type": "chrome",
+            "request": "launch",
+            // "webRoot": "${workspaceRoot}",
+            "url": "http://localhost:3333",
+            "userDataDir": "${workspaceRoot}/out/chrome",
+            "sourceMaps": true,
+            // "preLaunchTask": "development",
+            "smartStep": true,
+            "diagnosticLogging": true,
+            "port": 9222,
+            "runtimeExecutable": "${env.USERPROFILE}/AppData/Local/Google/Chrome SxS/Application/chrome.exe",
+            "internalConsoleOptions": "openOnSessionStart",
+            "webRoot": "${workspaceRoot}",
+            "sourceMapPathOverrides": {
+                "webpack:///./*": "${webRoot}/*", // Example: "webpack:///./src/app.js" -> "/users/me/project/src/app.js"
+                "webpack:///*": "*", // Example: "webpack:///C:/project/app.ts" -> "C:/project/app.ts"
+                "meteor://💻app/*": "${webRoot}/*" // Example: "meteor://💻app/main.ts" -> "c:/code/main.ts"
+            },
+            "skipFiles": [
+                "node_modules/**"
+            ]
+        },
+        {
+            "name": "Attach",
+            "type": "chrome",
+            "request": "attach",
+            "port": 9222,
+            "url": "localhost:3333",
+            "pathMapping": {
+                "/": "${workspaceRoot}"
+            }
+            //   "name": "Attach to Chrome",
+            //   "type": "chrome",
+            //   "request": "attach",
+            //   "port": 9222,
+            //   "sourceMaps": true,
+            //   "webRoot": "${workspaceRoot}"
+        }
+    ]
+}

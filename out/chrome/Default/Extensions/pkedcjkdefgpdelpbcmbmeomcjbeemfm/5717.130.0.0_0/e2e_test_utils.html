@@ -1,0 +1,25 @@
+<html ng-app="E2eTest" ng-csp xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <title>Chrome Media Router Extension E2E Test Utilities</title>
+  <script src="angular.js"></script>
+  <script type="text/javascript" src="e2e_test_utils.js"></script>
+</head>
+<body id="e2e_test_utils" ng-controller="E2eTestUtilsCtrl as utils">
+
+  <form ng-submit="utils.mirrorTabViaCastStreaming()">
+    <input ng-model="utils.sinkName" type="text" size="15" id="sinkName"/>
+    <input ng-model="utils.url" type="text" size="50" id="urlToOpen"/>
+    <input ng-model="utils.udpProxyServer" type="text" size="50" id="udpProxyServer"/>
+    <input ng-model="utils.networkProfile" type="text" size="15" id="networkProfile"/>
+    <input type="submit" value="Open Then Mirror Via Cast Streaming" id="mirrorTabViaCastStreaming"/>
+  </form>
+  <br/>
+
+  <form ng-submit="utils.mirrorDesktopViaCastStreaming()">
+    <input type="submit" value="Start Desktop Mirror Via Cast Streaming" id="mirrorDesktopViaCastStreaming"/>
+  </form>
+  <br/>
+
+  <button ng-click="utils.stopMirroring()" id="stopMirroring">Stop Mirroring</button>
+</body>
+</html>

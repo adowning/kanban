@@ -17,16 +17,45 @@ import {
   REQUEST_DELETE_TASK,
   RECEIVE_DELETE_TASK,
   REQUEST_TOGGLE_TASK,
-  RECEIVE_TOGGLE_TASK
+  RECEIVE_TOGGLE_TASK,
+  REQUEST_CREATE_MULTIPLECARDS,
+  RECEIVE_CREATE_MULTIPLECARDS,
+  //SERVICEMONSTER STUFF:
+  REQUEST_ORDERGUID,
+  RECEIVE_ORDERGUID,
+  REQUEST_LINEITEMS,
+  RECEIVE_LINEITEMS
+
 } from '../constants';
 
 import KanbanAPI from '../api/KanbanApi';
+import ServiceMonsterAPI from '../api/ServiceMonsterAPI';
 import {throttle} from '../utils/utils';
 import {getCard, getCardIndex} from '../reducer/rootReducer';
 import Immutable from 'immutable';
 
 let ActionCreators = {
 
+  addMultipleCards(cards) {
+    return (dispatch) => {
+      dispatch({ type: REQUEST_CREATE_MULTIPLECARDS, cards });
+      KanbanAPI.addMultipleCards(cards).then(
+        (newcards) => dispatch({ type: RECEIVE_CREATE_MULTIPLECARDS, success:true, newcards}),
+        (error) => dispatch({ type: RECEIVE_CREATE_MULTIPLECARDS, success:false, card, error })
+      );
+    };
+  },
+  
+  fetchLineItems(jobID) {
+    return (dispatch) => {
+      dispatch({ type: REQUEST_LINEITEMS });
+      console.log(jobID)
+      ServiceMonsterAPI.fetchLineItems(jobID).then(
+        (lines) => dispatch({ type: RECEIVE_LINEITEMS, success:true, lines }),
+        (error) => dispatch({ type: RECEIVE_LINEITEMS, success:false, error })
+      );
+    };
+  },
 
   fetchCards() {
     return (dispatch) => {
@@ -51,6 +80,7 @@ let ActionCreators = {
       );
     };
   },
+
 
 
   updateCard(card, cardDraft) {
